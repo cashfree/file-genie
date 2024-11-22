@@ -1,13 +1,13 @@
 ## FileGenie SDK
-FileGenie SDK is a Python library designed to simplify the parsing of various file formats (eg. TEXT, CSV, EXCEL, ZIP, XML, PDF) with a customizable transforming payloads as required. This SDK offers seamless integration, efficient file handling, and the flexibility to address edge cases with user-defined logic tailored to transforming entries as needed.
+FileGenie SDK is a Python library designed to simplify parsing files from AWS S3 in various formats (e.g., TEXT, CSV, EXCEL, ZIP, XML, PDF) and transforming the data using user-defined functions into desired output formats. By providing file parsing configurations and custom transformation logic, this library effortlessly processes and provide the output as needed.
 
 ### Features
-- **Multi-format Support:** Parse TEXT, CSV, EXCEL, ZIP, XML and PDF files effortlessly from AWS S3.
-- **Multi-format Response:** Supports multiple type of response as per user's need. For eg.- DATAFRAME, JSON, FILE
-- **Password-Proctected Support:** Parse password protected files.
-- **Customizable Edge Case Handling:** Define and apply custom functions to handle specific parsing requirements. There can be multiple edge case to handle while transforming the entries such as sanitise_str_column, convert_amount_as_per_currency, convert_date_format etc.
-- **S3 Integration:** Supports fetching files directly from AWS S3 buckets based on IAM role.
-- **Simple Configuration:** Initialize with straightforward configurations, avoiding the need for additional setup files.
+- **Multi-format Support:** Effortlessly parse files in formats such as TEXT, CSV, EXCEL, ZIP, XML, and PDF directly from AWS S3.
+- **Flexible Response Types:** Generate responses tailored to user needs, including DATAFRAME, JSON, or FILE outputs.
+- **Password-Protected Files:** Seamlessly parse files secured with passwords.
+- **Custom Edge Case Handling:** Apply user-defined custom functions to manage specific parsing and transformation needs, including data sanitization, value conversions, or reformatting date fields for consistency.
+AWS S3 Integration: Fetch files directly from AWS S3 buckets using IAM roles for secure access.
+Streamlined Configuration: Set up easily with minimal configuration, eliminating the need of writing parser for specific file type.
 
 ### Installation
 Install the SDK using pip:
@@ -22,7 +22,16 @@ pip install file_genie
 
 ### Getting Started
 - **Define Custom Edge Cases:**
-When specific functions are needed during file parsing, the SDK will import edge cases from your project structure as shown below. To implement this, create an edgeCases folder in your project and add a file named user_edge_cases.py. Define your custom functions in this file, and reference them in the edge_case section within the file_config as shown below.
+Let's say you need to sanitize columns (e.g., standardise column values to a common format before applying custom logic) during file parsing, you can define custom functions for the SDK to use.
+
+To implement this:
+
+- Create an edgeCases folder in your project.
+- Add a file named user_edge_cases.py.
+- Define your custom functions in this file.
+- Reference these functions in the edge_case section of the file_config.
+- The SDK will automatically import and apply these functions during file parsing or transformation.
+
 ```
 from edgeCases import user_edge_cases
 self.edge_cases = user_edge_cases
