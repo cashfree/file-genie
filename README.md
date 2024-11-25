@@ -1,5 +1,5 @@
-## FileGenie SDK
-FileGenie SDK is a Python library designed to simplify parsing files from AWS S3 in various formats (e.g., TEXT, CSV, EXCEL, ZIP, XML, PDF) and transforming the data using user-defined functions into desired output formats. By providing file parsing configurations and custom transformation logic, this library effortlessly processes and provide the output as needed.
+## FileGenie
+FileGenie is a Python library that simplifies file parsing from AWS S3 across various formats (eg.- TEXT, CSV, EXCEL, ZIP, XML, PDF etc.) and enables users to define custom functions for data massaging and transformation, ensuring seamless processing and tailored output generation based on provided configurations.
 
 ### Features
 - **Multi-format Support:** Effortlessly parse files in formats such as TEXT, CSV, EXCEL, ZIP, XML, and PDF directly from AWS S3.

@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="file_genie",
-    version="0.0.3",
+    version="0.0.4",
     description="File Genie is designed to parse various file types and transform them according to provided configuration",
     long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
